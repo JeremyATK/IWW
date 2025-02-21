@@ -20,6 +20,19 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .instructions {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
         }
         button {
             padding: 10px 20px;
@@ -29,20 +42,27 @@
             background-color: #007bff;
             color: white;
             border-radius: 5px;
+            margin-bottom: 20px;
         }
         button:hover {
             background-color: #0056b3;
         }
         #result {
-            margin-top: 20px;
             font-size: 18px;
             color: #333;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>随机抽签程序</h1>
+        <!-- 抽签说明 -->
+        <div class="instructions">
+            <p>欢迎使用随机抽签程序！</p>
+            <p>点击“点击抽签”按钮，系统会随机从30条内容中抽取一条。</p>
+            <p>每人只能抽取一次，祝你好运！</p>
+        </div>
         <button id="drawButton">点击抽签</button>
         <p id="result"></p>
     </div>
