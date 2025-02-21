@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机抽签程序</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>随机抽签程序</h1>
+        <button id="drawButton">点击抽签</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        // 后台输入的30条内容
+        const items = [
+            "内容1", "内容2", "内容3", "内容4", "内容5",
+            "内容6", "内容7", "内容8", "内容9", "内容10",
+            "内容11", "内容12", "内容13", "内容14", "内容15",
+            "内容16", "内容17", "内容18", "内容19", "内容20",
+            "内容21", "内容22", "内容23", "内容24", "内容25",
+            "内容26", "内容27", "内容28", "内容29", "内容30"
+        ];
+        // 获取按钮和结果显示元素
+        const drawButton = document.getElementById('drawButton');
+        const resultElement = document.getElementById('result');
+        // 添加点击事件监听器
+        drawButton.addEventListener('click', () => {
+            // 随机选择一个内容
+            const randomIndex = Math.floor(Math.random() * items.length);
+            const selectedItem = items[randomIndex];
+            // 显示结果
+            resultElement.textContent = `你抽到了：${selectedItem}`;
+        });
+    </script>
+</body>
+</html>
